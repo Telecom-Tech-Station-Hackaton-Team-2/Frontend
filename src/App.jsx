@@ -6,9 +6,13 @@ import LogingForm from "./components/LoginForm";
 function App() {
   return (
     <>
-      <NavBar />
-      <LogingForm />
-      <Footer />
+            <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<LogingForm />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
     </>
   );
 }
