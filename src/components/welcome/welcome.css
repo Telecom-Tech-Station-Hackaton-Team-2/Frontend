@@ -1,6 +1,8 @@
 .cardWelcome
 {
     width: 18rem;
+    border-radius: 36px;
+    overflow: hidden;
 }
 
 a
@@ -8,3 +10,4 @@ a
     text-decoration: none;
     color: black;
 }
+
