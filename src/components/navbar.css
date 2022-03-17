@@ -1,0 +1,28 @@
+.profile-header-container{
+  margin: 0 auto;
+  text-align: right;
+}
+
+.profile-header-img {
+  padding: 10px;
+}
+
+.profile-header-img > img.img-circle {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #F2F2F2; 
+  border-radius: 40px;
+}
+
+.profile-header {
+  margin-top: 10px;
+}
+
+.rounded-button {
+
+  width: 38px !important;
+}
+
+.btn-group {
+  margin-left: 10px;
+}

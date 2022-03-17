@@ -1,50 +1,81 @@
 import { Link } from "react-router-dom";
+import "./navbar.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEllipsisV, faUser, faSignOutAlt, faSignInAlt, faHome, faList } from '@fortawesome/free-solid-svg-icons';
+
+const loggedIn = true;
 
 const NavBar = () => {
-  return (
-    <header className="header">
-
-<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div className="container-fluid">
-    <a className="navbar-brand" href="#">
-    <img src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" />
-    </a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarS upportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Link</a>
-        </li>
-        <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a className="dropdown-item" href="#">Action</a></li>
-            <li><a className="dropdown-item" href="#">Another action</a></li>
-            <li><hr className="dropdown-divider" /></li>
-            <li><a className="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
-      <form className="d-flex">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-        <button className="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-
-    </header>
-  );
-};
+  if (loggedIn) {
+    return (
+        <>
+            <div className="d-flex justify-content-between bd-highlight navbar-dark bg-dark pb-2 pt-2 ps-2">
+                <div className="d-flex justify-content-start">
+                    <div className="p-2 bd-highlight">
+                        <Link exact="true" className="navbar-brand me-0 me-sm-1" to="/">Onboarding</Link>
+                    </div>
+                    <div className="p-2 bd-highlight">
+                    </div>
+                </div>
+                <div className="d-flex justify-content-end group-buttons">
+                    <div className="p-2 bd-highlight buttons">
+                        <div className="btn-group">
+                          <img src="https://ui-avatars.com/api/?name=John+Doe&rounded=true&size=38" />
+                        </div>
+                        <div className="btn-group">
+                            <button className="btn btn-primary rounded-circle border-0 ms-1 me-1 rounded-button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                <FontAwesomeIcon icon={faEllipsisV} />
+                            </button>
+                            <ul className="dropdown-menu dropdown-menu-end">
+                                <li><a className="dropdown-item" href="#">Perfil</a></li>
+                                <li><hr className="dropdown-divider"/></li>
+                                <li>
+                                    <Link className="dropdown-item" exact="true" to="/" >
+                                        <FontAwesomeIcon icon={faSignOutAlt} className="me-2"/>
+                                        Salir
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+} else {
+    return (
+        <>
+            <div className="d-flex justify-content-between bd-highlight navbar-dark bg-dark pb-2 pt-2 ps-2">
+                <div className="d-flex justify-content-start">
+                    <div className="p-2 bd-highlight">
+                        <Link exact="true" className="navbar-brand" to="/">Onboarding</Link>
+                    </div>
+                </div>
+                <div className="d-flex justify-content-end group-buttons">
+                    <div className="p-2 bd-highlight buttons">
+                        <div className="btn-group">
+                            <button className="btn btn-primary rounded-circle border-0 ms-1 me-1 rounded-button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                <FontAwesomeIcon icon={faUser} />
+                            </button>
+                            <ul className="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <Link className="dropdown-item" exact="true" to="/login">
+                                        <FontAwesomeIcon icon={faSignInAlt} className="me-2"/>
+                                        Ingresar
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}
+}
 
 export default NavBar;
