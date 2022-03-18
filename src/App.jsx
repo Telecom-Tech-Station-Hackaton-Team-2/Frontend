@@ -4,6 +4,7 @@ import Footer from "./components/footer/Footer";
 import Welcome from "./components/welcome/Welcome";
 import LogingForm from "./components/loginForm/LoginForm";
 import ItemsListContainer from "./components/itemsList/ItemsListContainer";
+import Profile from "./components/profile/Profile"
 
 function App() {
   return (
