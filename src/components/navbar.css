@@ -6,3 +6,24 @@
 .btn-group {
   margin-left: 10px;
 }
+
+.navbar_ul
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
+    color: white;
+}
+
+.navbar_li
+{
+    margin-right: 20px;
+    color: white;
+}
+
+
+.currentCategory
+{
+    font-weight: bold;
+}

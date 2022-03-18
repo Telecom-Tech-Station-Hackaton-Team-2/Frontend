@@ -8,6 +8,7 @@ import orga from './orga.png'
 function Welcome() {
     return (
         <div className="container">
+            <h1>¡Bienvenido!</h1>
             <div className="row">
               <div className="col-md-4 col-12 mt-2">
                 <div className="card cardWelcome ">

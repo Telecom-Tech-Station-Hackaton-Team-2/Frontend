@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./navbar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisV, faUser, faSignOutAlt, faSignInAlt, faHome, faList } from '@fortawesome/free-solid-svg-icons';
@@ -17,6 +17,15 @@ const NavBar = () => {
                     <div className="p-2 bd-highlight">
                     </div>
                 </div>
+                <div>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar_ul">
+                        <li className="navbar_li nav-item"><Link exact to='/inicio' className="nav-link">Inicio</Link></li>
+                        <li className="navbar_li nav-item"><Link to='/capacitaciones' className="nav-link">Capacitaciones</Link></li>
+                        <li className="navbar_li nav-item"><Link to='/accesos' className="nav-link">Accesos</Link></li>
+                        <li className="navbar_li nav-item"><Link to='/organigrama' className="nav-link">Organigrama</Link></li>
+                    </ul>
+                </div>
+
                 <div className="d-flex justify-content-end group-buttons">
                     <div className="p-2 bd-highlight buttons">
                         <div className="btn-group">
@@ -29,7 +38,7 @@ const NavBar = () => {
                                 <FontAwesomeIcon icon={faEllipsisV} />
                             </button>
                             <ul className="dropdown-menu dropdown-menu-end">
-                                <li><a className="dropdown-item" href="#">Perfil</a></li>
+                                <li><Link exact="true" className="navbar-brand me-0 me-sm-1" to="/perfil"><a className="dropdown-item" href="#">Perfil</a></Link></li>
                                 <li><hr className="dropdown-divider"/></li>
                                 <li>
                                     <Link className="dropdown-item" exact="true" to="/" >
