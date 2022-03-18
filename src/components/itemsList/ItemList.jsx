@@ -7,7 +7,7 @@ function ItemList(props) {
   
 
   return (
-    <div className="card-grid d-flex justify-content-center">
+    <div className="card-grid d-flex row justify-content-center">
 
       <div className="card" style={{ width: "18rem" }}>
         <img

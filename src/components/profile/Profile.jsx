@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import axios from 'axios';
+// import {CurrentUserContext} from '../context/UserContext';
+import UserServices from '../../services/user';
 
 function Profile(props) {
+    const [ userData, setUserData ] = useState();
+
+    useEffect( () => {
+        const data = new UserServices()
+        data.login( {
+            "user": "Maxi"
+        })
+            .then( response => {
+                console.log(response);
+            })
+    }, [])
+
+    // const getUserData = async () => {
+    //     // const data = await fetch("https://run.mocky.io/v3/f9690c25-38d8-4769-992c-fedc65244675")
+    //     // const user = await data.json()
+
+    //     // console.log(user);
+
+    //     // setUserData(user)
+    // }
+
+
+
     return (
         <div>
             <div>

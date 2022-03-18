@@ -4,12 +4,12 @@ import ItemList from "./ItemList";
 import DetailModal from "./DetailModal";
 
 function ItemsListContainer({ itemType }) {
-  if (itemType == "training") {
+  if (itemType === "training") {
     return (
       <>
         <div className="main-wrapper">
           <div className="section-title">
-            <h1>Capacitaciones</h1>
+            <h1>Capacitaciones Disponibles</h1>
           </div>
           <DetailModal />
 
@@ -96,7 +96,7 @@ function ItemsListContainer({ itemType }) {
         <div className="main-wrapper">
         <DetailModal />
           <div className="section-title">
-            <h1>Accesos</h1>
+            <h1>Gestión de Accesos</h1>
           </div>
           <ItemList />
         </div>

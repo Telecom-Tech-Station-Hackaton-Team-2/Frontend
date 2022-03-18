@@ -1,4 +1,5 @@
-import { Link, NavLink } from "react-router-dom";
+import React from 'react';
+import { Link } from "react-router-dom";
 import "./navbar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisV, faUser, faSignOutAlt, faSignInAlt, faHome, faList } from '@fortawesome/free-solid-svg-icons';
@@ -18,7 +19,7 @@ const NavBar = () => {
                     </div>
                 </div>
                 <div>
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar_ul">
+                    <ul className="me-auto mb-2 mb-lg-0 navbar_ul">
                         <li className="navbar_li nav-item"><Link exact to='/inicio' className="nav-link">Inicio</Link></li>
                         <li className="navbar_li nav-item"><Link to='/capacitaciones' className="nav-link">Capacitaciones</Link></li>
                         <li className="navbar_li nav-item"><Link to='/accesos' className="nav-link">Accesos</Link></li>
