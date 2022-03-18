@@ -9,13 +9,8 @@ export default class UserServices {
       user
     );
   }
+
   getData() {
-    return Axios.get(
-      "https://run.mocky.io/v3/c6ae5a52-5ce1-4386-9ae8-35d3e01b5e02"
-    );
-  }
-  getUserData() {
     return Axios.get("https://run.mocky.io/v3/bcace46d-2a73-4bce-89d5-7dfb923f8c7c");
   }
-
 }

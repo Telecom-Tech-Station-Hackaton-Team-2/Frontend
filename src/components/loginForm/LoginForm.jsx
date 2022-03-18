@@ -1,33 +1,42 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./loginForm.css";
 import UserServices from "../../services/user";
 
 function LoginForm() {
-
-  
-  const login = () => {
+  const login = (user) => {
     const data = new UserServices();
-    data
-      .login({
-        user: "Maxi",
-      })
-      .then((response) => {
-        console.log(response);
-      });
+    data.login(user).then((response) => {
+      if (response.data.access_token) {
+        localStorage.setItem("access_token", response.data.access_token);
+        window.location.replace("http://localhost:3000/inicio");
+      }
+    });
+  };
+  const formRef = useRef(null);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(formRef.current);
+    const data = {
+      user: formData.get("user"),
+      password: formData.get("password"),
+    };
+    login(data);
   };
 
   return (
     <>
       <div className="form-container">
-        <form>
+        <form form ref={formRef} onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label for="exampleInputEmail1" className="form-label">
+            <label htmlFor="user" className="form-label">
               Usuario
             </label>
             <input
               type="text"
               className="form-control"
-              id="exampleInputEmail1"
+              name="user"
+              id="user"
               aria-describedby="emailHelp"
             />
             <div id="emailHelp" className="form-text">
@@ -35,13 +44,14 @@ function LoginForm() {
             </div>
           </div>
           <div className="mb-3">
-            <label for="exampleInputPassword1" className="form-label">
+            <label htmlFor="password" className="form-label">
               Contraseña
             </label>
             <input
               type="password"
               className="form-control"
-              id="exampleInputPassword1"
+              name="password"
+              id="password"
             />
           </div>
           <div className="mb-3 form-check">
@@ -54,8 +64,8 @@ function LoginForm() {
               Recordarme
             </label>
           </div>
-          <button type="button" className="btn btn-primary" onClick={ login }>
-            Enviar
+          <button type="submit" className="btn btn-primary">
+            Ingresar
           </button>
         </form>
       </div>
