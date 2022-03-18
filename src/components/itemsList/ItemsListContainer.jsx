@@ -1,9 +1,21 @@
-import React from "react";
-import PropTypes from "prop-types";
-import ItemList from "./ItemList";
-import DetailModal from "./DetailModal";
+import React, { useState, useEffect } from "react";
+import Card from "./Card";
+import TrainingServices from "../../services/training";
 
 function ItemsListContainer({ itemType }) {
+  const [cardData, setCardData] = useState({
+    tecnica: [],
+    soft: [],
+    criticas: [],
+  });
+
+  useEffect(() => {
+    const data = new TrainingServices();
+    data.getData().then(({ data }) => {
+      setCardData(data);
+    });
+  }, []);
+
   if (itemType === "training") {
     return (
       <>
@@ -11,7 +23,6 @@ function ItemsListContainer({ itemType }) {
           <div className="section-title">
             <h1>Capacitaciones Disponibles</h1>
           </div>
-          <DetailModal />
 
           <div className="accordion" id="accordionExample">
             <div className="accordion-item">
@@ -34,7 +45,11 @@ function ItemsListContainer({ itemType }) {
                 data-bs-parent="#accordionExample"
               >
                 <div className="accordion-body">
-                  <ItemList />
+                  <div className="row">
+                    {cardData.criticas.map((info, key) => {
+                      return <Card data={info} key={key} />;
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
@@ -58,7 +73,11 @@ function ItemsListContainer({ itemType }) {
                 data-bs-parent="#accordionExample"
               >
                 <div className="accordion-body">
-                  <ItemList />
+                  <div className="row">
+                    {cardData.soft.map((info, key) => {
+                      return <Card data={info} key={key} />;
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
@@ -82,7 +101,11 @@ function ItemsListContainer({ itemType }) {
                 data-bs-parent="#accordionExample"
               >
                 <div className="accordion-body">
-                  <ItemList />
+                  <div className="row">
+                    {cardData.tecnica.map((info, key) => {
+                      return <Card data={info} key={key} />;
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
@@ -94,11 +117,14 @@ function ItemsListContainer({ itemType }) {
     return (
       <>
         <div className="main-wrapper">
-        <DetailModal />
           <div className="section-title">
             <h1>Gestión de Accesos</h1>
           </div>
-          <ItemList />
+          <div className="row">
+            {cardData.criticas.map((info, key) => {
+              return <Card data={info} key={key} />;
+            })}
+          </div>
         </div>
       </>
     );
