@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ItemList from "./ItemList";
+import DetailModal from "./DetailModal";
 
 function ItemsListContainer({ itemType }) {
   if (itemType == "training") {
@@ -10,6 +11,7 @@ function ItemsListContainer({ itemType }) {
           <div className="section-title">
             <h1>Capacitaciones</h1>
           </div>
+          <DetailModal />
 
           <div className="accordion" id="accordionExample">
             <div className="accordion-item">
@@ -92,9 +94,11 @@ function ItemsListContainer({ itemType }) {
     return (
       <>
         <div className="main-wrapper">
+        <DetailModal />
           <div className="section-title">
             <h1>Accesos</h1>
           </div>
+          <ItemList />
         </div>
       </>
     );

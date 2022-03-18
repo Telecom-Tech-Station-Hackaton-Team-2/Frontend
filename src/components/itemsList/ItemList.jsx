@@ -1,9 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+
 function ItemList(props) {
+
+  
+
   return (
-    <div className="card-grid d-flex">
+    <div className="card-grid d-flex justify-content-center">
+
       <div className="card" style={{ width: "18rem" }}>
         <img
           src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg"
@@ -16,9 +21,7 @@ function ItemList(props) {
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
-          <a href="#" className="btn btn-primary">
-            Go somewhere
-          </a>
+          <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailModal">Inscribirme</button>
         </div>
       </div>
 
@@ -34,9 +37,7 @@ function ItemList(props) {
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
-          <a href="#" className="btn btn-primary">
-            Go somewhere
-          </a>
+          <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailModal">Inscribirme</button>
         </div>
       </div>
 
@@ -52,9 +53,7 @@ function ItemList(props) {
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
-          <a href="#" className="btn btn-primary">
-            Go somewhere
-          </a>
+          <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailModal">Inscribirme</button>
         </div>
       </div>
 
@@ -70,9 +69,7 @@ function ItemList(props) {
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
-          <a href="#" className="btn btn-primary">
-            Go somewhere
-          </a>
+          <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailModal">Inscribirme</button>
         </div>
       </div>
     </div>
