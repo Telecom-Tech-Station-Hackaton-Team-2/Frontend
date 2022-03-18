@@ -8,6 +8,7 @@ import Profile from "./components/profile/Profile";
 import React from "react";
 import { CurrentUserProvider } from "./components/context/UserContext";
 import { OnboardingUserProvider } from "./components/context/OnboardingContext";
+import Error from "./components/error";
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
 
             <Route path="/perfil" element={<Profile />} />
             <Route path="/inicio" element={<Welcome />} />
+
+            <Route path="*" element={<Error />} />
           </Routes>
           <Footer />
         </BrowserRouter>

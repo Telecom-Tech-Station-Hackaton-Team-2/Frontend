@@ -2,10 +2,9 @@
 {
     width: 18rem;
     border-radius: 36px;
-    overflow: hidden;
 }
 
-a
+.link
 {
     text-decoration: none;
     color: black;

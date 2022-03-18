@@ -12,8 +12,8 @@ function Welcome() {
             <div className="row">
               <div className="col-md-4 col-12 mt-2">
                 <div className="card cardWelcome ">
-                    <Link exact="true" to="/capacitaciones">
-                        <img src={capa} className="card-img-top" alt="foto capacitacion" />
+                    <Link exact="true" to="/capacitaciones" className="link">
+                        <img src={capa} className="card-img-top overflow-hidden" alt="foto capacitacion" />
 
                         <div className="card-body">
                             <h5 className="card-title">Capacitaciones</h5>
@@ -27,8 +27,8 @@ function Welcome() {
               </div>
               <div className="col-md-4 col-12 mt-2">
                 <div className="card cardWelcome">
-                    <Link exact="true" to="/accesos">
-                        <img src={access} className="card-img-top" alt="foto accesos" />
+                    <Link exact="true" to="/accesos" className="link">
+                        <img src={access} className="card-img-top overflow-hidden" alt="foto accesos" />
 
                         <div className="card-body">
                             <h5 className="card-title">Accesos</h5>
@@ -42,8 +42,8 @@ function Welcome() {
               </div>
               <div className="col-md-4 col-12 mt-2">
                 <div className="card cardWelcome">
-                    <Link exact="true" to="/organigrama">
-                        <img src={orga} className="card-img-top" alt="foto organigrama" />
+                    <Link exact="true" to="/organigrama" className="link">
+                        <img src={orga} className="card-img-top overflow-hidden" alt="foto organigrama" />
 
                         <div className="card-body">
                             <h5 className="card-title">Organigrama</h5>
