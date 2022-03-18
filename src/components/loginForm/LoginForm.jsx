@@ -6,8 +6,6 @@ function LoginForm() {
 
   
   const login = () => {
-    
-    console.log('NO FUNCIONA')
     const data = new UserServices();
     data
       .login({
@@ -56,7 +54,7 @@ function LoginForm() {
               Recordarme
             </label>
           </div>
-          <button type="submit" className="btn btn-primary" onClick={login}>
+          <button type="button" className="btn btn-primary" onClick={ login }>
             Enviar
           </button>
         </form>

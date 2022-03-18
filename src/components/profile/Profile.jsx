@@ -9,7 +9,7 @@ function Profile(props) {
 
     useEffect( () => {
         const data = new UserServices()
-        data.login( {
+        data.getUserData( {
             "user": "Maxi"
         })
             .then( response => {

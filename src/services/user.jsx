@@ -17,4 +17,5 @@ export default class UserServices {
   getUserData() {
     return Axios.get("https://run.mocky.io/v3/bcace46d-2a73-4bce-89d5-7dfb923f8c7c");
   }
+
 }
