@@ -13,7 +13,7 @@ function Profile(props) {
 
   if (localStorage.getItem("access_token")) {
     return (
-      <div>
+      <div className="main-wrapper">
         <div>
           <h1>Mi Perfil</h1>
         </div>

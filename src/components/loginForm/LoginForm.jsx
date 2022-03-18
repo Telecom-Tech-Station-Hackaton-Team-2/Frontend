@@ -26,7 +26,7 @@ function LoginForm() {
 
   return (
     <>
-      <div className="form-container">
+      <div className="form-container main-wrapper">
         <form form ref={formRef} onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="user" className="form-label">

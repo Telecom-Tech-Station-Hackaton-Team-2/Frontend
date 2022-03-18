@@ -51,11 +51,6 @@ const NavBar = () => {
                   Accesos
                 </Link>
               </li>
-              <li className="navbar_li nav-item">
-                <Link to="/organigrama" className="nav-link">
-                  Organigrama
-                </Link>
-              </li>
             </ul>
           </div>
 
